@@ -162,11 +162,11 @@ Found 1 items
 drwxrwxrwx   - bryan bryan          0 2020-04-30 17:34 /nueva_carpeta/hijos
 ```
 ## Ejercicios
-- [*] [Guiado](#Guiado)  
+- [x] [Guiado](#Guiado)  
 - [ ] [Tarea] (#Tarea) 
 ## Tarea
 ## Ejercicios
-- [*] [Guiado](#Guiado)  
-- [*] [Tarea] (#Tarea) 
+- [x] [Guiado](#Guiado)  
+- [x] [Tarea] (#Tarea) 
 [GitHub](https://github.com/Bryan-Developer/Curso-Spark-Profesional/blob/development/Laboratorio01.md)  
 [GitLab](https://gitlab.com/Bryan-Developer/curso-spark-profesional/-/blob/development/Laboratorio01.md)

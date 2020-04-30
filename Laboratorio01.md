@@ -165,6 +165,82 @@ drwxrwxrwx   - bryan bryan          0 2020-04-30 17:34 /nueva_carpeta/hijos
 - [x] [Guiado](#Guiado)  
 - [ ] [Tarea](#Tarea) 
 ## Tarea
+1. Con el super usuario crear las siguiente estructura de carpetas ``` /user/mi_usuario/practica_hadoop/data1 & data2 & data3 ```
+```bash
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -mkdir -p /user/bryan-developer/practica_hadoop/data1
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -mkdir -p /user/bryan-developer/practica_hadoop/data2
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -mkdir -p /user/bryan-developer/practica_hadoop/data3
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -ls /user/bryan-developer/practica_hadoop
+Found 3 items
+drwxr-xr-x   - hdfs hadoop          0 2020-04-30 17:47 /user/bryan-developer/practica_hadoop/data1
+drwxr-xr-x   - hdfs hadoop          0 2020-04-30 17:47 /user/bryan-developer/practica_hadoop/data2
+drwxr-xr-x   - hdfs hadoop          0 2020-04-30 17:47 /user/bryan-developer/practica_hadoop/data3
+```
+2. Crear los siguintes archivos ``` file.csv & voidfile.csv ``` dentro de ``` /user/bryan-developer/practica_hadoop/data1 ```
+```bash
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -ls /user/bryan-developer/practica_hadoop/data1
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -touchz /user/bryan-developer/practica_hadoop/data1/file.csv
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -touchz /user/bryan-developer/practica_hadoop/data1/voidfile.csv
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -ls /user/bryan-developer/practica_hadoop/data1
+Found 2 items
+-rw-r--r--   2 hdfs hadoop          0 2020-04-30 17:51 /user/bryan-developer/practica_hadoop/data1/file.csv
+-rw-r--r--   2 hdfs hadoop          0 2020-04-30 17:51 /user/bryan-developer/practica_hadoop/data1/voidfile.csv
+```
+3. Cambiar los permiso, los dueños y grupos de los archivos  ``` file.csv main:main 755 & voidfile.csv 700 ```
+```bash
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -ls /user/bryan-developer/practica_hadoop/data1
+Found 2 items
+-rw-r--r--   2 hdfs hadoop          0 2020-04-30 17:51 /user/bryan-developer/practica_hadoop/data1/file.csv
+-rw-r--r--   2 hdfs hadoop          0 2020-04-30 17:51 /user/bryan-developer/practica_hadoop/data1/voidfile.csv
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -chown -R main:main /user/bryan-developer/practica_hadoop/data1/file.csv
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -chmod 755 /user/bryan-developer/practica_hadoop/data1/file.csv
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -chmod 700 /user/bryan-developer/practica_hadoop/data1/voidfile.csv
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -ls /user/bryan-developer/practica_hadoop/data1
+Found 2 items
+-rwxr-xr-x   2 main main            0 2020-04-30 17:51 /user/bryan-developer/practica_hadoop/data1/file.csv
+-rwx------   2 hdfs hadoop          0 2020-04-30 17:51 /user/bryan-developer/practica_hadoop/data1/voidfile.csv
+```  
+4. Crear las siguientes carpetas en el siguiente directorio ``` /user/bryan-developer/practica_hadoop/data2/2017-01-27 & 2017-01-28 & 2017-01-29 ```
+```bash
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -mkdir /user/bryan-developer/practica_hadoop/data2/2017-01-27
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -mkdir /user/bryan-developer/practica_hadoop/data2/2017-01-28
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -mkdir /user/bryan-developer/practica_hadoop/data2/2017-01-29
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -ls /user/bryan-developer/practica_hadoop/data2
+Found 3 items
+drwxr-xr-x   - hdfs hadoop          0 2020-04-30 17:58 /user/bryan-developer/practica_hadoop/data2/2017-01-27
+drwxr-xr-x   - hdfs hadoop          0 2020-04-30 17:58 /user/bryan-developer/practica_hadoop/data2/2017-01-28
+drwxr-xr-x   - hdfs hadoop          0 2020-04-30 17:58 /user/bryan-developer/practica_hadoop/data2/2017-01-29
+```
+5. Crear archivo ``` file.csv ``` dentro de los directorios ``` /user/bryan-developer/practica_hadoop/data2/2017-01-27 &  2017-01-28 ```  
+```bash
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -touchz /user/bryan-developer/practica_hadoop/data2/2017-01-27/file.csv
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -touchz /user/bryan-developer/practica_hadoop/data2/2017-01-28/file.csv
+```
+6. Cambiar los permisos y dueños de manera recursiva al directorio data2
+```bash
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -ls /user/bryan-developer/practica_hadoop
+Found 3 items
+drwxr-xr-x   - hdfs hadoop          0 2020-04-30 17:51 /user/bryan-developer/practica_hadoop/data1
+drwxr-xr-x   - hdfs hadoop          0 2020-04-30 17:58 /user/bryan-developer/practica_hadoop/data2
+drwxr-xr-x   - hdfs hadoop          0 2020-04-30 17:47 /user/bryan-developer/practica_hadoop/data3
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -chown -R main:main /user/bryan-developer/practica_hadoop/data2
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -ls /user/bryan-developer/practica_hadoop
+Found 3 items
+drwxr-xr-x   - hdfs hadoop          0 2020-04-30 17:51 /user/bryan-developer/practica_hadoop/data1
+drwxr-xr-x   - main main            0 2020-04-30 17:58 /user/bryan-developer/practica_hadoop/data2
+drwxr-xr-x   - hdfs hadoop          0 2020-04-30 17:47 /user/bryan-developer/practica_hadoop/data3
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -chmod 777 /user/bryan-developer/practica_hadoop/data2
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -ls /user/bryan-developer/practica_hadoop
+Found 3 items
+drwxr-xr-x   - hdfs hadoop          0 2020-04-30 17:51 /user/bryan-developer/practica_hadoop/data1
+drwxrwxrwx   - main main            0 2020-04-30 17:58 /user/bryan-developer/practica_hadoop/data2
+drwxr-xr-x   - hdfs hadoop          0 2020-04-30 17:47 /user/bryan-developer/practica_hadoop/data3
+hdfs@cluster-laboratorio-m:/home/bryan$ hdfs dfs -ls /user/bryan-developer/practica_hadoop/data2
+Found 3 items
+drwxr-xr-x   - main main          0 2020-04-30 18:01 /user/bryan-developer/practica_hadoop/data2/2017-01-27
+drwxr-xr-x   - main main          0 2020-04-30 18:01 /user/bryan-developer/practica_hadoop/data2/2017-01-28
+drwxr-xr-x   - main main          0 2020-04-30 17:58 /user/bryan-developer/practica_hadoop/data2/2017-01-29
+```  
 ## Ejercicios
 - [x] [Guiado](#Guiado)  
 - [x] [Tarea](#Tarea)  

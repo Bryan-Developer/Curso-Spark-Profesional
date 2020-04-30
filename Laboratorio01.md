@@ -8,7 +8,7 @@ gcloud beta dataproc clusters create cluster-laboratorio --enable-component-gate
 3. Conectarse por cualquier cliente ssh.
 ## Ejercicios
 - [ ] [Guiado](#Guiado)  
-- [ ] Tarea  
+- [ ] [Tarea](#Tarea)  
 ## Guiado  
 
 1. Ejecuta la siguente sentencia en tu Consola ``` hdfs dfs -ls / ``` lista todo el contenido de tu carpeta datanode 
@@ -163,10 +163,10 @@ drwxrwxrwx   - bryan bryan          0 2020-04-30 17:34 /nueva_carpeta/hijos
 ```
 ## Ejercicios
 - [x] [Guiado](#Guiado)  
-- [ ] [Tarea] (#Tarea) 
+- [ ] [Tarea](#Tarea) 
 ## Tarea
 ## Ejercicios
 - [x] [Guiado](#Guiado)  
-- [x] [Tarea] (#Tarea) 
+- [x] [Tarea](#Tarea) 
 [GitHub](https://github.com/Bryan-Developer/Curso-Spark-Profesional/blob/development/Laboratorio01.md)  
 [GitLab](https://gitlab.com/Bryan-Developer/curso-spark-profesional/-/blob/development/Laboratorio01.md)

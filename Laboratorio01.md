@@ -1,6 +1,6 @@
 # Laboratorio 01: Curso Spark Profesional
 ## Ejercicios
-- [ ] [Guiado](###markdown-header-guiado)  
+- [ ] [Guiado](#Guiado)  
 - [ ] Tarea  
 ### Guiado
 [GitHub](https://github.com/Bryan-Developer/Curso-Spark-Profesional/blob/development/Laboratorio01.md)  
